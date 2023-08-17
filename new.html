@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Font Size Changer</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  #fontSizeSelector {
+    margin-bottom: 20px;
+  }
+  #textContainer {
+    display: flex;
+    align-items: center;
+  }
+</style>
+</head>
+<body>
+  <label for="fontSizeSelector">Select Font Size: </label>
+  <input type="number" id="fontSizeSelector" value="16" min="10">
+  <div id="textContainer">
+    <p id="displayText">Sample Text</p>
+  </div>
+
+  <script>
+    const fontSizeSelector = document.getElementById('fontSizeSelector');
+    const displayText = document.getElementById('displayText');
+
+    fontSizeSelector.addEventListener('input', (event) => {
+      const selectedSize = `${event.target.value}px`;
+      displayText.style.fontSize = selectedSize;
+    });
+  </script>
+</body>
+</html>
